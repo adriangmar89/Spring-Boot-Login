@@ -101,7 +101,7 @@ Ejecutar la API:
   }
   ```
 
-#### **Inicio de sesión**  
+#### **Ruta segura**  
 
 - **Endpoint**:  
   ```http
