@@ -24,7 +24,7 @@ Para ejecutar el proyecto correctamente, asegúrate de tener instalado lo siguie
 
 ## Configuración de la base de datos  
 
-Antes de ejecutar la aplicación, configura la base de datos en el archivo `application.properties` o `application.yml`.  
+Antes de ejecutar la aplicación, configura la base de datos en el archivo `application.properties`.  
 
 Ejemplo de configuración en `application.properties`:  
 
