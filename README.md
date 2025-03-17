@@ -100,3 +100,14 @@ Ejecutar la API:
     "password": "Prueba123"
   }
   ```
+
+#### **Inicio de sesión**  
+
+- **Endpoint**:  
+  ```http
+  POST http://localhost:8080/api/test
+  ```
+- **Headers**:  
+  ```
+  Authorization: Bearer <tu_token_jwt>
+  ```
