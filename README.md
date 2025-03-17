@@ -101,7 +101,7 @@ Ejecutar la API:
   }
   ```
 
-#### **Ruta segura**  
+#### **Ruta protegida de prueba**  
 
 - **Endpoint**:  
   ```http
