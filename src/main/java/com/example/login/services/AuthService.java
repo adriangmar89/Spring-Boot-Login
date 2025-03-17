@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.login.models.User;
-import com.example.login.models.AuthResponse; // Importar el DTO
+import com.example.login.models.AuthResponse;
 import com.example.login.repositories.UserRepository;
 import java.util.Date;
 import javax.crypto.SecretKey;
@@ -26,12 +26,23 @@ public class AuthService {
 
     // Método para registrar un nuevo usuario y generar un token JWT
     public AuthResponse register(User user) {
+        // Validar que el nombre de usuario no esté registrado
+        if (userRepository.findByUserName(user.getUserName()).isPresent()) {
+            throw new RuntimeException("El nombre de usuario ya está registrado");
+        }
+        // Validar que el email no esté registrado
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            throw new RuntimeException("El email ya está registrado");
+        }
+        // Si el rol no se proporciona, asignar "USER" por defecto
+        if (user.getRole() == null || user.getRole().isEmpty()) {
+            user.setRole("user");
+        }
         // Codificar la contraseña antes de guardarla
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User registeredUser = userRepository.save(user);
         // Generar un token JWT
         String token = generateToken(registeredUser);
-        // Devolver la respuesta con el token y la información del usuario
         return new AuthResponse(registeredUser, token);
     }
 

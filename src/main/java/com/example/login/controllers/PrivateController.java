@@ -12,5 +12,5 @@ public class PrivateController {
     public String test() {
         return "¡Esta es una ruta privada! Solo accesible con un token válido.";
     }
-    
+
 }

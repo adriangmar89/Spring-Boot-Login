@@ -6,6 +6,7 @@ import com.example.login.models.User;
 import com.example.login.models.AuthResponse;
 import com.example.login.models.LoginRequest;
 import com.example.login.services.AuthService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -16,13 +17,13 @@ public class AuthController {
 
     // Endpoint para registrar un nuevo usuario
     @PostMapping("/register")
-    public AuthResponse register(@RequestBody User user) {
+    public AuthResponse register(@Valid @RequestBody User user) {
         return authService.register(user);
     }
 
     // Endpoint para autenticar un usuario y obtener un token JWT
     @PostMapping("/login")
-    public AuthResponse login(@RequestBody LoginRequest loginRequest) {
+    public AuthResponse login(@Valid @RequestBody LoginRequest loginRequest) {
         return authService.login(loginRequest.getEmail(), loginRequest.getPassword());
     }
 
