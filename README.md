@@ -105,7 +105,7 @@ Ejecutar la API:
 
 - **Endpoint**:  
   ```http
-  POST http://localhost:8080/api/test
+  GET http://localhost:8080/api/test
   ```
 - **Headers**:  
   ```
