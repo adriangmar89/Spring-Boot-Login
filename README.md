@@ -35,7 +35,6 @@ spring.datasource.username=root
 spring.datasource.password=root
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 # Configuración de JWT (clave secreta)
 jwt.secret=Dx0qS3PB3DPgw45b2gHp8HtJtyrhksCiJ0hopMLB009wmYGZ7J
