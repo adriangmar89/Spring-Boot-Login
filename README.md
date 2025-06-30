@@ -65,7 +65,6 @@ Ejecutar la API:
 ./mvnw spring-boot:run
 ```
 
-
 ## Rutas de la API  
 
 ### **Autenticación**  
