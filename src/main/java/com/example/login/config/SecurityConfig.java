@@ -29,7 +29,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll() // Rutas públicas
-                .requestMatchers("/api/**").authenticated() // Rutas privadas
+                .requestMatchers("/api/test").authenticated() // Rutas privadas accesibles con cualquier rol
+                .requestMatchers("/api/testAdmin").hasAuthority("admin") // Solo accesibles por administradores
                 .anyRequest().denyAll() // Denegar cualquier otra ruta
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class); // Filtro JWT

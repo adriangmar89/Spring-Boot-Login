@@ -35,6 +35,7 @@ spring.datasource.username=root
 spring.datasource.password=root
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+spring.jpa.open-in-view=false
 
 # Configuración de JWT (clave secreta)
 jwt.secret=Dx0qS3PB3DPgw45b2gHp8HtJtyrhksCiJ0hopMLB009wmYGZ7J
@@ -79,10 +80,10 @@ Ejecutar la API:
 - **Body (JSON)**:  
   ```json
   {
-    "userName": "User",
-    "email": "User@gmail.com",
+    "userName": "user",
+    "email": "user@gmail.com",
     "password": "Prueba123",
-    "role": "User"
+    "role": "user"
   }
   ```
 
@@ -95,16 +96,27 @@ Ejecutar la API:
 - **Body (JSON)**:  
   ```json
   {
-    "email": "User@gmail.com",
+    "email": "user@gmail.com",
     "password": "Prueba123"
   }
   ```
 
-#### **Ruta protegida de prueba**  
+#### **Ruta protegida**  
 
 - **Endpoint**:  
   ```http
   GET http://localhost:8080/api/test
+  ```
+- **Headers**:  
+  ```
+  Authorization: Bearer <tu_token_jwt>
+  ```
+
+#### **Ruta protegida para admin**  
+
+- **Endpoint**:  
+  ```http
+  GET http://localhost:8080/api/testAdmin
   ```
 - **Headers**:  
   ```
