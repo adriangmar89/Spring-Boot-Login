@@ -77,6 +77,9 @@ Ejecutar la API:
   ```http
   POST http://localhost:8080/auth/register
   ```
+- **Descripción**:
+
+    Este endpoint permite registrar un nuevo usuario en el sistema. El campo role es opcional. Si no se especifica, por defecto se asignará el rol user.
 - **Body (JSON)**:  
   ```json
   {
@@ -93,6 +96,9 @@ Ejecutar la API:
   ```http
   POST http://localhost:8080/auth/login
   ```
+- **Descripción**:
+
+    Este endpoint permite a un usuario autenticarse en el sistema con su email y contraseña. Si las credenciales son correctas, se devuelve un token JWT que deberá usarse para acceder a las rutas protegidas de la API.
 - **Body (JSON)**:  
   ```json
   {
